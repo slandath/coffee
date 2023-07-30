@@ -5,65 +5,75 @@
 }
 
 body {
-	font-family: Helvetica, sans-serif;
+  font-family: Helvetica, sans-serif;
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  max-width: 50vw;
 }
 
 h2 {
-	font-size: 40px;
-	margin-bottom: 1rem;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
 }
 
 h3 {
-	font-size: 24px;
-	margin-bottom: .5rem;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 
 h4 {
-	font-size: 20px;
-	margin-bottom: .5rem;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+img {
+  max-width: 6.25rem;
+}
+
+a {
+  font-size: 0.75rem;
 }
 
 .body-container {
-	margin-top: 1rem;
-	display: flex;
-	justify-content: center;
+  margin-top: 1rem;
 }
 
 .container {
-	display: block;
-	border: 1px solid black;
-	padding: 2rem;
-	text-align: center;
-	border-radius: .5rem;
+  display: block;
+  border: 1px solid black;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 0.5rem;
 }
 
 .slider {
-	margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 .result {
-	font-size: 20px;
-	background-color: aqua;
-	width: 55%;
-	margin: 0 auto;
-	border-radius: 1rem;
-	padding: .5rem;
+  font-size: 20px;
+  background-color: aqua;
+  width: 55%;
+  margin: 0 auto;
+  border-radius: 1rem;
+  padding: 0.5rem;
 }
 
 .groundCoffeeAmount {
-	display: inline-block;
-	background-color: brown;
-	color: white;
-	border-radius: 2rem;
-	padding: .75rem;
-	margin-bottom: 1rem;
+  display: inline-block;
+  background-color: #6f4e37;
+  color: white;
+  border-radius: 2rem;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
 }
 
 .waterAmount {
-	display: inline-block;
-	background-color: blue;
-	color: white;
-	border-radius: 2rem;
-	padding: .75rem;
-	margin-bottom: 1rem;
+  display: inline-block;
+  background-color: blue;
+  color: white;
+  border-radius: 2rem;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
 }
