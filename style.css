@@ -41,7 +41,11 @@ a {
 
 .container {
   display: block;
+  /*
   border: 1px solid black;
+  */
+
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   padding: 2rem;
   text-align: center;
   border-radius: 0.5rem;
@@ -63,6 +67,7 @@ a {
 .groundCoffeeAmount {
   display: inline-block;
   background-color: #6f4e37;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   color: white;
   border-radius: 2rem;
   padding: 0.75rem;
@@ -72,6 +77,7 @@ a {
 .waterAmount {
   display: inline-block;
   background-color: blue;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   color: white;
   border-radius: 2rem;
   padding: 0.75rem;
