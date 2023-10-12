@@ -1,74 +1,69 @@
-<div class="container">
-    <div class="container">
-        <h2>"Normal" Coffee Maker</h2>
-        <img src="/coffee-maker.png" height="100px" >
-        <h3 id="coffeeNum" class="label">1 cup</h3>
-        <div class="slider">
-            <input type="range" min="1" max="14" value="1" id="coffeeAmt">
+
+<body class="p-2">
+    <div class="container bg-dark-subtle rounded p-2 mb-2 mt-2">
+      <h1 class="text-center">Drip Coffee Recipe</h1>
+      <div class="row justify-content-center">
+        <div class="col-lg-3 col-md-3 col-sm col text-center">
+          <label for="brewedCoffee" class="form-label"
+            >Cups of Brewed Coffee</label
+          >
+          <input
+            type="number"
+            id="brewedCoffee"
+            class="form-control"
+            min="1"
+            max="12"
+          />
         </div>
-
-        <h3>Ground Coffee</h3>
-        <h4 id="groundCoffeeAmount" class="groundCoffeeAmount"></h4>
-        <br>
-        <h3>Water</h3>
-        <h4 id="waterAmount" class="waterAmount"></h4>
-        <br>
-        <a href="https://www.flaticon.com/free-icons/coffee-maker" title="coffee maker icons" class="link">Coffee maker
-            icons created by berkahicon - Flaticon</a>
+      </div>
+      <div class="row mt-3 justify-content-center">
+        <div class="col-lg-3 col-md-3 col-sm col">
+          <p
+            class="bg-primary rounded p-2 text-center text-light"
+            id="waterAmt"
+          >
+            0 ounces of water
+          </p>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm col">
+          <p class="bg-warning rounded p-2 text-center" id="coffeeAmt">
+            0 tablespoons of ground coffee
+          </p>
+        </div>
+      </div>
     </div>
-</div>
+
 <script>
-let slider = document.querySelector("#coffeeAmt");
-let output = document.querySelector("#coffeeNum");
-
-slider.oninput = function() {
-	let label = ""
-	slider.value === 1 ? label = " cup" : label = " cups"
-	output.innerText = slider.value + label;
-};
-
-document.querySelector("#coffeeAmt").addEventListener("input", calcCoffee);
-
-function calcCoffee() {
-	const x = document.querySelector("#coffeeAmt").value
-	const tbsp = x*2
-	const water = x*6
-		
-	switch (tbsp % 8) {
-		case 0:
-			document.querySelector("#groundCoffeeAmount").innerText = tbsp + " tablespoons" + " | " + tbsp/16 + " cup";
-			break;
-		case 2: 
-			document.querySelector("#groundCoffeeAmount").innerText = tbsp + " tablespoons";
-			break;
-		case 4:
-			document.querySelector("#groundCoffeeAmount").innerText = tbsp + " tablespoons";
-			break;
-		case 6:
-			document.querySelector("#groundCoffeeAmount").innerText = tbsp + " tablespoons";
-			break;
-	};
+const brewedCoffee = document.querySelector('#brewedCoffee');
+	const waterAmt = document.querySelector('#waterAmt');
+	const coffeeAmt = document.querySelector('#coffeeAmt');
 	
-	switch (water % 8) {
-		case 0:
-			document.querySelector("#waterAmount").innerText = water + " fluid ounces" + " | " + water/8 + " cup";
-			break;
-		case 2: 
-			document.querySelector("#waterAmount").innerText = water + " fluid ounces"
-			break;
-		case 4:
-			document.querySelector("#waterAmount").innerText = water + " fluid ounces"
-			break;
-		case 6:
-			document.querySelector("#waterAmount").innerText = water + " fluid ounces"
-			break;
-	};
+	document.addEventListener('input', inputHandler);
 	
-	const resultDiv = ["#groundCoffeeAmount", "#waterAmount"];
-	resultDiv.forEach((item) => {
-		document.querySelector(item).classname = "result";
-	});
-};
-
-calcCoffee();
-</script>
+	function inputHandler() {
+	  switch (true) {
+		case brewedCoffee.value % 4 === 0:
+		  const coffeeToCups = calcGroundCoffee() / 4;
+		  const water0 = calcWater();
+		  coffeeAmt.innerText = `${coffeeToCups} cups of ground coffee`;
+		  waterAmt.innerText = `${water0} ounces of water`;
+		  break;
+		default:
+		  const coffee = calcGroundCoffee();
+		  const water = calcWater();
+		  coffeeAmt.innerText = `${coffee} tablespoons of ground coffee`;
+		  waterAmt.innerText = `${water} ounces of water`;
+	  }
+	}
+	
+	function calcGroundCoffee() {
+	  const alpha = brewedCoffee.value * 2;
+	  return alpha;
+	}
+	
+	function calcWater() {
+	  const beta = brewedCoffee.value * 6;
+	  return beta;
+	}
+	</script>
+	</body>
