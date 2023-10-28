@@ -1,5 +1,4 @@
-
-<body class="p-2">
+<body>
     <div class="container bg-dark-subtle rounded p-2 mb-2 mt-2">
       <h1 class="text-center">Drip Coffee Recipe</h1>
       <div class="row justify-content-center">
@@ -34,15 +33,15 @@
     </div>
 
 <script>
-const brewedCoffee = document.querySelector('#brewedCoffee');
-	const waterAmt = document.querySelector('#waterAmt');
-	const coffeeAmt = document.querySelector('#coffeeAmt');
+const brewedCoffee = document.querySelector('#brewedCoffee') as HTMLInputElement;
+	const waterAmt = document.querySelector('#waterAmt') as HTMLInputElement;
+	const coffeeAmt = document.querySelector('#coffeeAmt') as HTMLInputElement;
 	
 	document.addEventListener('input', inputHandler);
 	
 	function inputHandler() {
 	  switch (true) {
-		case brewedCoffee.value % 4 === 0:
+		case +brewedCoffee.value % 4 === 0:
 		  const coffeeToCups = calcGroundCoffee() / 4;
 		  const water0 = calcWater();
 		  coffeeAmt.innerText = `${coffeeToCups} cups of ground coffee`;
@@ -57,12 +56,12 @@ const brewedCoffee = document.querySelector('#brewedCoffee');
 	}
 	
 	function calcGroundCoffee() {
-	  const alpha = brewedCoffee.value * 2;
+	  const alpha = +brewedCoffee.value * 2;
 	  return alpha;
 	}
 	
 	function calcWater() {
-	  const beta = brewedCoffee.value * 6;
+	  const beta = +brewedCoffee.value * 6;
 	  return beta;
 	}
 	</script>

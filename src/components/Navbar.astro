@@ -18,8 +18,14 @@ import Logo from "./Logo.astro"
       </button>
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="/recipes/">Recipes</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="/frenchPress/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Recipes
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="/drip/">Drip Coffee Maker</a>
+              <a class="dropdown-item" href="/french/">French Press</a>
+            </div>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/brands/">Brands</a>
@@ -34,7 +40,7 @@ import Logo from "./Logo.astro"
             <a class="nav-link" href="/shops/">Shops</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/content/welcome/">Blog</a>
+            <a class="nav-link" href="/blog/">Blog</a>
           </li>
         </ul>
       </div>

@@ -1,10 +1,10 @@
-<body class="p-2">
-    <div class="container bg-dark-subtle rounded p-2">
+<body>
+    <div class="container bg-dark-subtle rounded p-2 mb-2 mt-2">
       <h1 class="text-center">French Press Coffee Recipe</h1>
       <div class="row justify-content-center">
         <div class="col-lg-3 col-md-3 col-sm col text-center">
           <label for="brewedCoffee" class="form-label"
-            >Cups of Brewed Coffee</label
+            >Cups of Coffee</label
           >
           <input
             type="number"
@@ -30,38 +30,17 @@
           </p>
         </div>
       </div>
-      <div class="row justify-content-center">
-        <div class="col-md-6ZZZZZZZZ col-sm-4 col-4">
-          <h2 class="text-center">Instructions</h2>
-          <ol>
-            <li>Grind coffee on course setting.</li>
-            <li>Add heated water (between 190 - 200 degrees fahrenheit).</li>
-            <li>Stir.</li>
-            <li>
-              Pull the plunger to the top of lid and place the lid on top of
-              pitcher. If the lid contains additional filter grates, be sure to
-              rotate the lid to line up the grates and the pour spout.
-            </li>
-            <li>Let steep for 4 minutes.</li>
-            <li>
-              Depress plunger to push coffee grounds to the bottom of the
-              pitcher.
-            </li>
-            <li>Pour and enjoy!</li>
-          </ol>
-        </div>
-      </div>
     </div>
     <script>
-const brewedCoffeeA = document.querySelector('#brewedCoffeeA');
-const waterAmtA = document.querySelector('#waterAmtA');
-const coffeeAmtA = document.querySelector('#coffeeAmtA');
+const brewedCoffee = document.querySelector('#brewedCoffeeA') as HTMLInputElement;
+const waterAmt = document.querySelector('#waterAmtA') as HTMLInputElement;
+const coffeeAmt = document.querySelector('#coffeeAmtA') as HTMLInputElement;
 
 document.addEventListener('input', inputHandler);
 
 function inputHandler() {
   switch (true) {
-    case brewedCoffee.value % 4 === 0:
+    case +brewedCoffee.value % 4 === 0:
       const coffeeToCups = calcGroundCoffee() / 4;
       const water0 = calcWater();
       coffeeAmt.innerText = `${coffeeToCups} cups of ground coffee`;
@@ -76,12 +55,12 @@ function inputHandler() {
 }
 
 function calcGroundCoffee() {
-  const alpha = brewedCoffee.value * 2;
+  const alpha = +brewedCoffee.value * 2;
   return alpha;
 }
 
 function calcWater() {
-  const beta = brewedCoffee.value * 6;
+  const beta = +brewedCoffee.value * 6;
   return beta;
 }
     </script>
