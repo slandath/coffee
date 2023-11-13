@@ -4,19 +4,17 @@ const allPosts = await Astro.glob("../pages/content/*.md")
 ---
 
 <MainLayout title="Blog">
-                <div class="row">
-    {
-    allPosts.map((post) => 
-    <div class="col-sm-3">
-        <div class="card text-center mt-2 mb-2">
-             <div class="card-body">
-             <h5 class="card-title">{post.frontmatter.title}</h5>
-             <p class="card-text">{post.frontmatter.description}</p>
-             <a href={post.url} class="btn btn-secondary">Read More</a>
+    <div class="row">
+        {allPosts.map((post) => 
+            <div class="col-sm-3">
+                <div class="card text-center mt-2 mb-2">
+                    <div class="card-body">
+                        <h5 class="card-title">{post.frontmatter.title}</h5>
+                        <p class="card-text">{post.frontmatter.description}</p>
+                        <a href={post.url} class="btn btn-secondary">Read More</a>
+                    </div>
+                </div>
             </div>
-         </div>
-        </div>
-         )}
-         </div>
-
+        )}
+    </div>
 </MainLayout>
