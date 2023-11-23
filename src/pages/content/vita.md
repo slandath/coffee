@@ -1,0 +1,19 @@
+---
+layout: '../../layouts/BlogPostLayout.astro'
+date: 11-23-2023
+title: Caffe Vita
+description: My go-to in Downtown Seattle
+---
+
+# Caffe Vita
+
+One afternoon, I had a couple of hours to burn in Downtown Seattle.  I had a taste for cup of coffee and I ducked into one of Caffe Vita's locations.  I had tried their coffee in restaurants around town, but this my first time visiting one of their shops.  It was everything I have ever wanted in a coffee shop
+
+## Location Info
+
+1005 E. Pike St, Seattle, WA 98122 
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2689.6262750386973!2d-122.3216060237486!3d47.61395618746971!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54906acc4738cf25%3A0xeff18719160ca666!2sCaff%C3%A9%20Vita!5e0!3m2!1sen!2sus!4v1700770736963!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+## Website
+[Caffe Vita](https://www.caffevita.com/)
