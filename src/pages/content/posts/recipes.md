@@ -1,5 +1,5 @@
 ---
-layout: '../../layouts/BlogPostLayout.astro'
+layout: '../../../layouts/BlogPostLayout.astro'
 date: 10-27-2023
 title: New Recipes Available
 description: Drip and French Press!

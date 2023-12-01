@@ -1,5 +1,5 @@
 ---
-layout: '../../layouts/BlogPostLayout.astro'
+layout: '../../../layouts/BlogPostLayout.astro'
 date: 10-11-2023
 title: Welcome to the Site!
 description: An introduction to the site

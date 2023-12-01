@@ -1,7 +1,9 @@
 ---
-layout: '../../layouts/BlogPostLayout.astro'
+layout: '../../../layouts/BlogPostLayout.astro'
 date: 11-13-2023
 title: Victor's Celtic Coffee
+name: Victor's Celtic Coffee
+location: Redmond, WA
 description: My favorite spot in Seattle
 ---
 

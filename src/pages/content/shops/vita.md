@@ -1,7 +1,9 @@
 ---
-layout: '../../layouts/BlogPostLayout.astro'
+layout: '../../../layouts/BlogPostLayout.astro'
 date: 11-23-2023
 title: Caffe Vita
+name: Caffe Vita
+location: Seattle, WA
 description: My go-to in Downtown Seattle
 ---
 
