@@ -5,9 +5,9 @@ const { date, title} = frontmatter;
 ---
 
 <MainLayout {title}>
-    <article class="container">
+    <article class="container py-3">
         <h1 class="text-center">{title}</h1>
-        <p class="text-center">{date} by <a href="#">Tom</a></p>
+        <p class="text-center">{date} by Tom</p>
             <slot />
       </article>
 </MainLayout>

@@ -5,6 +5,7 @@ title: Victor's Celtic Coffee
 name: Victor's Celtic Coffee
 location: Redmond, WA
 description: My favorite spot in Seattle
+logo: '/beans.jpeg'
 ---
 
 # Victor's Celtic Coffee

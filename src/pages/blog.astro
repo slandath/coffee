@@ -4,6 +4,7 @@ const allPosts = await Astro.glob("../pages/content/posts/*.md")
 ---
 
 <MainLayout title="Blog">
+    <div class="container p-3">
     <div class="row">
         {allPosts.map((post) => 
             <div class="col-sm-3">
@@ -15,6 +16,7 @@ const allPosts = await Astro.glob("../pages/content/posts/*.md")
                     </div>
                 </div>
             </div>
+        </div>
         )}
     </div>
 </MainLayout>

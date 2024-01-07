@@ -1,6 +1,22 @@
 ---
-import MainLayout from "../layouts/MainLayout.astro";
+import MainLayout from "../layouts/MainLayout.astro"
+const allBrands = await Astro.glob("../pages/content/brands/*.md")
+
 ---
-<MainLayout title="Brands">
-    <h1>Coming Soon!</h1>
-</MainLayout>
+<MainLayout title="Blog">
+    <div class="container p-3">
+    <div class="row">
+        {allBrands.map((post) => 
+            <div class="col-sm-3">
+                <div class="card text-center p-2" style="width: 15rem">
+                    <img class="card-img-top px-5" src={post.frontmatter.logo} alt="logo">
+                    <div class="card-body">
+                        <h4 class="card-title">{post.frontmatter.name}</h4>
+                        <a href={post.frontmatter.website} class="btn btn-secondary" target="_blank">Website</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        )}
+    </div>
+    </MainLayout>

@@ -4,10 +4,12 @@ const allShops = await Astro.glob("../pages/content/shops/*.md")
 
 ---
 <MainLayout title="Blog">
+    <div class="container p-3">
     <div class="row">
         {allShops.map((post) => 
             <div class="col-sm-3">
-                <div class="card text-center mt-2 mb-2">
+                <div class="card text-center p-2" style="width: 15rem">
+                    <img class="card-img-top" src={post.frontmatter.logo} alt="logo">
                     <div class="card-body">
                         <h5 class="card-title">{post.frontmatter.name}</h5>
                         <p class="card-text">{post.frontmatter.location}</p>
@@ -15,6 +17,7 @@ const allShops = await Astro.glob("../pages/content/shops/*.md")
                     </div>
                 </div>
             </div>
+        </div>
         )}
     </div>
     </MainLayout>

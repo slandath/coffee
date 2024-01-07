@@ -5,6 +5,7 @@ title: Caffe Vita
 name: Caffe Vita
 location: Seattle, WA
 description: My go-to in Downtown Seattle
+logo: 'https://www.caffevita.com/cdn/shop/t/105/assets/logo.svg?v=89180471563119258291675103906'
 ---
 
 # Caffe Vita
