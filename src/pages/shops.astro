@@ -8,7 +8,7 @@ const allShops = await Astro.glob("../pages/content/shops/*.md")
     <div class="row">
         {allShops.map((post) => 
             <div class="col-sm-3">
-                <div class="card text-center p-2" style="width: 15rem">
+                <div class="card text-center p-1 my-2">
                     <img class="card-img-top" src={post.frontmatter.logo} alt="logo">
                     <div class="card-body">
                         <h5 class="card-title">{post.frontmatter.name}</h5>
