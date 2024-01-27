@@ -1,13 +1,15 @@
 ---
-import MainLayout from "./MainLayout.astro";
-const {frontmatter} = Astro.props
-const { date, title} = frontmatter;
+import MainLayout from './MainLayout.astro';
+const { frontmatter } = Astro.props;
+const { date, title } = frontmatter;
 ---
 
 <MainLayout {title}>
-    <article class="container py-3">
-        <h1 class="text-center">{title}</h1>
-        <p class="text-center">{date} by Tom</p>
-            <slot />
-      </article>
+  <article class="container">
+    <div class="content mb-4">
+      <h1 class="has-text-centered">{title}</h1>
+      <p class="has-text-centered">{date} by Tom</p>
+      <slot />
+    </div>
+  </article>
 </MainLayout>

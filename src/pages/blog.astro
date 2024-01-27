@@ -1,22 +1,28 @@
 ---
-import MainLayout from "../layouts/MainLayout.astro"
-const allPosts = await Astro.glob("../pages/content/posts/*.md")
+import MainLayout from '../layouts/MainLayout.astro';
+const allPosts = await Astro.glob('../pages/content/posts/*.md');
 ---
 
 <MainLayout title="Blog">
-    <div class="container p-3">
-    <div class="row">
-        {allPosts.map((post) => 
-            <div class="col-sm-3">
-                <div class="card text-center p-1 my-2">
-                    <div class="card-body">
-                        <h5 class="card-title">{post.frontmatter.title}</h5>
-                        <p class="card-text">{post.frontmatter.description}</p>
-                        <a href={post.url} class="btn btn-secondary">Read More</a>
-                    </div>
+  <div class="container">
+    <div class="columns py-4">
+      {
+        allPosts.map((post) => (
+          <div class="column is-one-quarter">
+            <div class="card">
+              <div class="card-content has-text-centered">
+                <div class="content">
+                  <h5 class="card-title">{post.frontmatter.title}</h5>
+                  <p class="card-text">{post.frontmatter.description}</p>
+                  <a href={post.url} class="button is-info">
+                    Read More
+                  </a>
                 </div>
+              </div>
             </div>
-        </div>
-        )}
+          </div>
+        ))
+      }
     </div>
+  </div>
 </MainLayout>

@@ -3,22 +3,27 @@ import MainLayout from '../layouts/MainLayout.astro';
 const allShops = await Astro.glob('../pages/content/shops/*.md');
 ---
 
-<MainLayout title="Blog">
-  <div class="container p-3">
-    <div class="row">
+<MainLayout title="Shops">
+  <div class="container">
+    <div class="columns py-4">
       {
         allShops.map((post) => (
-          <div class="col-sm-3">
-            <div class="card text-center p-1 my-2">
-              <img
-                class="card-img-top"
-                src={post.frontmatter.logo}
-                alt="logo"
-              />
-              <div class="card-body">
-                <h5 class="card-title">{post.frontmatter.name}</h5>
-                <p class="card-text">{post.frontmatter.location}</p>
-                <a href={post.url} class="btn btn-secondary">
+          <div class="column is-one-quarter">
+            <div class="card p-4">
+              <div class="card-image">
+                <figure class="image">
+                  <img src={post.frontmatter.logo} alt="logo" />
+                </figure>
+              </div>
+
+              <header>
+                <p class="card-header-title is-centered py-2">
+                  {post.frontmatter.name}
+                </p>
+              </header>
+              <div class="card-content has-text-centered py-1">
+                <p class="mb-3">{post.frontmatter.location}</p>
+                <a href={post.url} class="button is-info">
                   Read More
                 </a>
               </div>

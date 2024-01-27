@@ -1,48 +1,40 @@
 ---
-import Logo from "./Logo.astro"
+import Logo from './Logo.astro';
 ---
 
-<nav class="navbar navbar-expand-lg bg-secondary">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="/"><Logo /></a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarTogglerDemo02"
-        aria-controls="navbarTogglerDemo02"
+<nav class="navbar is-info" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="/">
+      <Logo />
+      <a
+        role="button"
+        class="navbar-burger"
+        aria-label="menu"
         aria-expanded="false"
-        aria-label="Toggle navigation"
+        data-target="navbarBasicExample"
       >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="/frenchPress/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Recipes
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="/drip/">Drip Coffee Maker</a>
-              <a class="dropdown-item" href="/french/">French Press</a>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/brands/">Brands</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/equipment/">Equipment</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/resources/">Resources</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/shops/">Shops</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/blog/">Blog</a>
-          </li>
-        </ul>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </a>
+
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">Recipes</a>
+
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="/french/">French Press</a>
+            <a class="navbar-item" href="/drip/">Drip Coffee</a>
+          </div>
+        </div>
+        <a class="navbar-item" href="/brands/">Brands</a>
+        <a class="navbar-item" href="/equipment/">Equipment</a>
+        <a class="navbar-item" href="/resources/">Resources</a>
+        <a class="navbar-item" href="/shops/">Shops</a>
+        <a class="navbar-item" href="/blog/">Blog</a>
       </div>
     </div>
-  </nav>
+  </div>
+</nav>
