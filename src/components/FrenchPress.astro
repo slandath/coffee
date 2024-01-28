@@ -1,67 +1,62 @@
 <body>
-    <div class="container bg-dark-subtle rounded p-2 mb-2 mt-2">
-      <h1 class="text-center">French Press Coffee Recipe</h1>
-      <div class="row justify-content-center">
-        <div class="col-lg-3 col-md-3 col-sm col text-center">
-          <label for="brewedCoffee" class="form-label"
+  <div class="container">
+    <h1 class="has-text-centered is-size-2">French Press Coffee Recipe</h1>
+    <div class="columns is-centered">
+      <div class="column is-4">
+        <div class="field pt-3">
+          <label for="brewedCoffee" class="label is-size-5"
             >Cups of Coffee</label
           >
           <input
             type="number"
             id="brewedCoffeeA"
-            class="form-control"
+            class="input is-medium"
             min="1"
             max="8"
           />
         </div>
-      </div>
-      <div class="row mt-3 justify-content-center">
-        <div class="col-lg-3 col-md-3 col-sm col">
-          <p
-            class="bg-primary rounded p-2 text-center text-light"
-            id="waterAmtA"
-          >
-            0 fluid ounces of water
-          </p>
-        </div>
-        <div class="col-lg-3 col-md-3 col-sm col">
-          <p class="bg-warning rounded p-2 text-center" id="coffeeAmtA">
-            0 tablespoons of ground coffee
-          </p>
-        </div>
+        <p class="py-2 is-size-5 has-text-centered" id="waterAmtA">
+          0 fluid ounces of water
+        </p>
+        <p class="py-2 mb-4 is-size-5 has-text-centered" id="coffeeAmtA">
+          0 tablespoons of course ground coffee
+        </p>
       </div>
     </div>
-    <script>
-const brewedCoffee = document.querySelector('#brewedCoffeeA') as HTMLInputElement;
-const waterAmt = document.querySelector('#waterAmtA') as HTMLInputElement;
-const coffeeAmt = document.querySelector('#coffeeAmtA') as HTMLInputElement;
+  </div>
+</body>
+<script>
+  const brewedCoffee = document.querySelector(
+    '#brewedCoffeeA'
+  ) as HTMLInputElement;
+  const waterAmt = document.querySelector('#waterAmtA') as HTMLInputElement;
+  const coffeeAmt = document.querySelector('#coffeeAmtA') as HTMLInputElement;
 
-document.addEventListener('input', inputHandler);
+  document.addEventListener('input', inputHandler);
 
-function inputHandler() {
-  switch (true) {
-    case +brewedCoffee.value % 4 === 0:
-      const coffeeToCups = calcGroundCoffee() / 4;
-      const water0 = calcWater();
-      coffeeAmt.innerText = `${coffeeToCups} cups of ground coffee`;
-      waterAmt.innerText = `${water0} ounces of water`;
-      break;
-    default:
-      const coffee = calcGroundCoffee();
-      const water = calcWater();
-      coffeeAmt.innerText = `${coffee} tablespoons of ground coffee`;
-      waterAmt.innerText = `${water} ounces of water`;
+  function inputHandler() {
+    switch (true) {
+      case +brewedCoffee.value % 4 === 0:
+        const coffeeToCups = calcGroundCoffee() / 4;
+        const water0 = calcWater();
+        coffeeAmt.innerText = coffeeToCups + ' cups of ground coffee';
+        waterAmt.innerText = water0 + ' fluid ounces of water';
+        break;
+      default:
+        const coffee = calcGroundCoffee();
+        const water = calcWater();
+        coffeeAmt.innerText = coffee + ' tablespoons of ground coffee';
+        waterAmt.innerText = water + ' fluid ounces of water';
+    }
   }
-}
 
-function calcGroundCoffee() {
-  const alpha = +brewedCoffee.value * 2;
-  return alpha;
-}
+  function calcGroundCoffee() {
+    const alpha = +brewedCoffee.value * 2;
+    return alpha;
+  }
 
-function calcWater() {
-  const beta = +brewedCoffee.value * 6;
-  return beta;
-}
-    </script>
-  </body>
+  function calcWater() {
+    const beta = +brewedCoffee.value * 6;
+    return beta;
+  }
+</script>

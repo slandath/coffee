@@ -19,28 +19,21 @@ import Logo from './Logo.astro';
         <span aria-hidden="true"></span>
       </a>
     </a>
-    <div class="navbar-menu" id="navbarMenu">
-      <div class="navbar-start">
-        <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link">Recipes</a>
-          <div class="navbar-dropdown">
-            <a class="navbar-item" href="/french/">French Press</a>
-            <a class="navbar-item" href="/drip/">Drip Coffee</a>
-          </div>
+  </div>
+  <div class="navbar-menu" id="navbarMenu">
+    <div class="navbar-start">
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">Recipes</a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="/french/">French Press</a>
+          <a class="navbar-item" href="/drip/">Drip Coffee</a>
         </div>
-        <a class="navbar-item" href="/brands/">Brands</a>
-        <a class="navbar-item" href="/equipment/">Equipment</a>
-        <a class="navbar-item" href="/resources/">Resources</a>
-        <a class="navbar-item" href="/shops/">Shops</a>
-        <a class="navbar-item" href="/blog/">Blog</a>
       </div>
+      <a class="navbar-item" href="/brands/">Brands</a>
+      <a class="navbar-item" href="/equipment/">Equipment</a>
+      <a class="navbar-item" href="/resources/">Resources</a>
+      <a class="navbar-item" href="/shops/">Shops</a>
+      <a class="navbar-item" href="/blog/">Blog</a>
     </div>
   </div>
-  <script>
-    const hamburger = document.querySelector('#hamburger');
-    const navbarMenu = document.querySelector('#navbarMenu');
-    hamburger.addEventListener('click', () => {
-      navbarMenu.classList.toggle('is-active');
-    });
-  </script>
 </nav>
