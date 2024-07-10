@@ -4,26 +4,27 @@
     <div class="columns is-centered">
       <div class="column is-4">
         <div class="field pt-3">
-          <label for="brewedCoffee" class="label is-size-5 has-text-centered"
+          <label for="brewedCoffee" class="label has-text-centered is-size-5"
             >Cups of Coffee</label
           >
           <input
             type="number"
-            id="brewedCoffeeA"
-            class="input is-medium"
+            id="brewedCoffee"
+            class="input is-large has-text-centered"
             min="1"
             max="8"
           />
         </div>
-        <p class="py-2 is-size-5 has-text-centered" id="waterAmtA">
+        <p class="py-2 is-size-5 has-text-centered" id="waterAmt">
           0 fluid ounces of water
         </p>
-        <p class="py-2 mb-4 is-size-5 has-text-centered" id="coffeeAmtA">
+        <p class="py-2 mb-4 is-size-5 has-text-centered" id="coffeeAmt">
           0 tablespoons of course ground coffee
         </p>
       </div>
     </div>
   </div>
+
   <script>
     const brewedCoffee = document.querySelector(
       '#brewedCoffee'
