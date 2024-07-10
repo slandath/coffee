@@ -1,23 +1,39 @@
+---
+const year = new Date().getFullYear();
+---
+
 <footer class="footer has-background-info">
   <div class="content has-text-centered">
     <p>
       <a href="https://astro.build/" target="_blank" class="has-text-light">
-        Made with Astro.&nbsp;&nbsp;
+        Made with Astro&nbsp; | &nbsp;
         <a
           href="https://slandath.github.io"
           target="_blank"
           class="has-text-light"
         >
-          My Website.&nbsp;&nbsp;
+          My Website&nbsp; | &nbsp;
         </a>
         <a
-          href="https://www.flaticon.com/free-icons/mug"
-          title="mug icons"
+          href="https://www.github.com/slandath"
+          target="_blank"
           class="has-text-light"
         >
-          Mug icons created by Freepik - Flaticon.&nbsp;&nbsp;
+          My Github
         </a>
-        <p class="has-text-light">Copyright &copy; 2024 Tom Slanda</p>
+        <p>
+          <a
+            href="https://www.flaticon.com/free-icons/mug"
+            target="_blank"
+            title="mug icons"
+            class="has-text-light"
+          >
+            Mug icons created by Freepik - Flaticon.&nbsp;&nbsp;
+          </a>
+        </p>
+        <p class="has-text-light" id="copyright">
+          Copyright &copy; {year} Tom Slanda
+        </p>
       </a>
     </p>
   </div>
