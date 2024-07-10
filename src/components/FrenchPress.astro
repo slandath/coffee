@@ -24,36 +24,36 @@
       </div>
     </div>
   </div>
-</body>
-<script>
-  const brewedCoffee = document.querySelector(
-    '#brewedCoffee'
-  ) as HTMLInputElement;
-  const waterAmt = document.querySelector('#waterAmt') as HTMLInputElement;
-  const coffeeAmt = document.querySelector('#coffeeAmt') as HTMLInputElement;
+  <script>
+    const brewedCoffee = document.querySelector(
+      '#brewedCoffee'
+    ) as HTMLInputElement;
+    const waterAmt = document.querySelector('#waterAmt') as HTMLInputElement;
+    const coffeeAmt = document.querySelector('#coffeeAmt') as HTMLInputElement;
 
-  document.addEventListener('input', inputHandler);
+    document.addEventListener('input', inputHandler);
 
-  function inputHandler() {
-    const results = makeCoffee(+brewedCoffee.value);
-    if (results.water % 8 === 0) {
-      waterAmt.innerText = `${results.water} fluid ounces of water
+    function inputHandler() {
+      const results = makeCoffee(+brewedCoffee.value);
+      if (results.water % 8 === 0) {
+        waterAmt.innerText = `${results.water} fluid ounces of water
           (${results.water / 8} cups)`;
-    } else {
-      waterAmt.innerText = results.water + ' fluid ounces of water';
+      } else {
+        waterAmt.innerText = results.water + ' fluid ounces of water';
+      }
+      if (results.groundCoffee % 16 === 0) {
+        coffeeAmt.innerText = `${
+          results.groundCoffee
+        } tablespoons of ground coffee (${results.groundCoffee / 16} cup)`;
+      } else
+        coffeeAmt.innerText =
+          results.groundCoffee + ' tablespoons of ground coffee';
     }
-    if (results.groundCoffee % 16 === 0) {
-      coffeeAmt.innerText = `${
-        results.groundCoffee
-      } tablespoons of ground coffee (${results.groundCoffee / 16} cup)`;
-    } else
-      coffeeAmt.innerText =
-        results.groundCoffee + ' tablespoons of ground coffee';
-  }
 
-  function makeCoffee(num: number) {
-    const water = num * 6;
-    const groundCoffee = num * 2;
-    return { water, groundCoffee };
-  }
-</script>
+    function makeCoffee(num: number) {
+      const water = num * 6;
+      const groundCoffee = num * 2;
+      return { water, groundCoffee };
+    }
+  </script>
+</body>
