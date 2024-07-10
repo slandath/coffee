@@ -4,13 +4,13 @@
     <div class="columns is-centered">
       <div class="column is-4">
         <div class="field pt-3">
-          <label for="brewedCoffee" class="label is-size-5"
+          <label for="brewedCoffee" class="label has-text-centered is-size-5"
             >Cups of Brewed Coffee</label
           >
           <input
             type="number"
             id="brewedCoffee"
-            class="input is-medium"
+            class="input is-large has-text-centered"
             min="1"
             max="12"
           />
@@ -35,29 +35,26 @@
     document.addEventListener('input', inputHandler);
 
     function inputHandler() {
-      switch (true) {
-        case +brewedCoffee.value % 4 === 0:
-          const coffeeToCups = calcGroundCoffee() / 4;
-          const water0 = calcWater();
-          coffeeAmt.innerText = coffeeToCups + ' cups of ground coffee';
-          waterAmt.innerText = water0 + ' fluid ounces of water';
-          break;
-        default:
-          const coffee = calcGroundCoffee();
-          const water = calcWater();
-          coffeeAmt.innerText = coffee + ' tablespoons of ground coffee';
-          waterAmt.innerText = water + ' fluid ounces of water';
+      const results = makeCoffee(+brewedCoffee.value);
+      if (results.water % 8 === 0) {
+        waterAmt.innerText = `${results.water} fluid ounces of water
+          (${results.water / 8} cups)`;
+      } else {
+        waterAmt.innerText = results.water + ' fluid ounces of water';
       }
+      if (results.groundCoffee % 16 === 0) {
+        coffeeAmt.innerText = `${
+          results.groundCoffee
+        } tablespoons of ground coffee (${results.groundCoffee / 16} cup)`;
+      } else
+        coffeeAmt.innerText =
+          results.groundCoffee + ' tablespoons of ground coffee';
     }
 
-    function calcGroundCoffee() {
-      const alpha = +brewedCoffee.value * 2;
-      return alpha;
-    }
-
-    function calcWater() {
-      const beta = +brewedCoffee.value * 6;
-      return beta;
+    function makeCoffee(num: number) {
+      const water = num * 6;
+      const groundCoffee = num * 2;
+      return { water, groundCoffee };
     }
   </script>
 </body>
