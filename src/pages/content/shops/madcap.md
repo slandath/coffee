@@ -5,7 +5,7 @@ title: Madcap Coffee
 name: Madcap Coffee
 location: Grand Rapids, MI
 description: My Annual Ritual
-logo: '/madcap-logo.svg'
+logo: 'https://raw.githubusercontent.com/slandath/images/8344388c425896748204f060167cfe9847a621e1/coffee/madcap-logo.svg'
 ---
 
 # Madcap Coffee

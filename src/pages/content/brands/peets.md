@@ -1,7 +1,7 @@
 ---
 layout: '../../../layouts/BlogPostLayout.astro'
 name: Peet's Coffee
-logo: '/peets-logo.png'
+logo: 'https://raw.githubusercontent.com/slandath/images/main/coffee/peets-logo.png'
 website: 'https://www.peets.com/'
 ---
 
